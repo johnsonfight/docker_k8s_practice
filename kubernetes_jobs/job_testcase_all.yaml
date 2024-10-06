@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-script1
+spec:
+  schedule: "*/1 * * * *"  # Run every 1 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: script1-container
+            image: johnsonfight/tc_1_bioschangepassword:latest
+            args: ["--script-examples"]
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-script2
+spec:
+  schedule: "*/2 * * * *"  # Run every 2 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: script2-container
+            image: johnsonfight/tc_2_changebiosbootorder:latest
+            args: ["--script-examples"]
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-script3
+spec:
+  schedule: "*/3 * * * *"  # Run every 3 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: script3-container
+            image: johnsonfight/tc_3_getosinformation:latest
+            args: ["--script-examples"]
+          restartPolicy: Never

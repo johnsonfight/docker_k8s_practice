@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testcase3-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: testcase3-container
+        image: johnsonfight/tc_3_getosinformation:latest
+        # args: ["-ip", "192.168.0.120", "-u", "root", "-p", "password"]
+        args: ["--script-examples"]
+      restartPolicy: Never
+  backoffLimit: 4

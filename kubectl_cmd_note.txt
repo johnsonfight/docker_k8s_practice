@@ -1,0 +1,9 @@
+kubectl get pods
+kubectl logs testcase1-job-hlkfp
+
+kubectl get jobs
+kubectl delete job testcase1-job
+
+kubectl apply -f D:\github\docker_kubernetes\kubernetes_jobs\job_testcase1.yaml
+
+kubectl apply -f job_testcase_all.yaml

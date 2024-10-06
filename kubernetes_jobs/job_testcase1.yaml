@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testcase1-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: testcase1-container
+        image: johnsonfight/tc_1_bioschangepassword:latest
+        # args: ["-ip", "192.168.0.120", "-u", "root", "-p", "password", "--type", "1", "--new", "p@ssw0rd"]
+        args: ["--script-examples"]
+      restartPolicy: Never
+  backoffLimit: 4

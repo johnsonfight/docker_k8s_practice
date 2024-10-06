@@ -1,0 +1,2 @@
+docker build -t johnsonfight/tc_1_bioschangepassword:latest .
+docker push johnsonfight/tc_1_bioschangepassword
